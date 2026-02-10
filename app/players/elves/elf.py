@@ -1,12 +1,10 @@
 # flake8: noqa: E741
-from abc import ABC, abstractmethod
+from abc import ABC
 
 from app.players.player import Player
 
 
 class Elf(Player, ABC):
-
-    @abstractmethod
     def __init__(
             self,
             nickname: str,
@@ -15,6 +13,5 @@ class Elf(Player, ABC):
         self.nickname = nickname
         self._musical_instrument = musical_instrument
 
-    @abstractmethod
     def play_elf_song(self) -> None:
         print(f"{self.nickname} is playing a song on the {self._musical_instrument}")
